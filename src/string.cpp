@@ -93,4 +93,8 @@ std::strong_ordering String::operator<=>(const String &s) const {
     return std::strong_ordering::equal;
 }
 
+String String::operator+(const String &s) const {
+    return String(list::append(head, s.head));
+}
+
 
