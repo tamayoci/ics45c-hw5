@@ -42,3 +42,11 @@ String &String::operator=(String &&s) {
 bool String::in_bounds(int index) const {
     return index >= 0 && index < size();
 }
+
+char String::operator[](int index) const {
+    if (!in_bounds(index)) {
+        cout << "ERROR: Index Out Of Bounds" << endl;
+        return '\0';
+    }
+    return list::nth(head, index)->data;
+}
