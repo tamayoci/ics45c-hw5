@@ -38,3 +38,7 @@ String &String::operator=(String &&s) {
     }
     return *this;
 }
+
+bool String::in_bounds(int index) const {
+    return index >= 0 && index < size();
+}
