@@ -115,3 +115,20 @@ Node *find_char(Node *head, char c) {
     return nullptr;
 }
 
+Node *find_list(Node *haystack, Node *needle) {
+    if (needle == nullptr) {
+        return haystack;
+    }
+    for (Node *p = haystack; p != nullptr; p = p->next) {
+        Node *h = p;
+        Node *n = needle;
+        while (h != nullptr && n != nullptr && h->data == n->data) {
+            h = h->next;
+            n = n->next;
+        }
+        if (n == nullptr) {
+            return p;
+        }
+    }
+    return nullptr;
+}
