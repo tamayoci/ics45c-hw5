@@ -50,3 +50,7 @@ char String::operator[](int index) const {
     }
     return list::nth(head, index)->data;
 }
+
+int String::size() const {
+    return list::length(head);
+}
