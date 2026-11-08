@@ -66,3 +66,15 @@ int String::indexOf(char c) const {
     }
     return list::index(head, found);
 }
+
+int String::indexOf(const String &s) const {
+    if (s.head == nullptr) {
+        return 0;
+    }
+    list::Node *found = list::find_list(head, s.head);
+    if (found == nullptr) {
+        return -1;
+    }
+    return list::index(head, found);
+}
+
