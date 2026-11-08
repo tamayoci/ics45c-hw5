@@ -8,3 +8,7 @@ using namespace std;
 String::String(const char *s) {
     head = list::from_string(s);
 }
+
+String::String(const String &s) {
+    head = list::copy(s.head);
+}
