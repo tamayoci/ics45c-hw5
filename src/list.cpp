@@ -32,3 +32,16 @@ void free(Node *head) {
         delete temp;
     }
 }
+
+Node *copy(Node *head) {
+    if (head == nullptr) {
+        return nullptr;
+    }
+    Node *new_head = new Node{head->data, nullptr};
+    Node *tail = new_head;
+    for (Node *p = head->next; p != nullptr; p = p->next) {
+        tail->next = new Node{p->data, nullptr};
+        tail = tail->next;
+    }
+    return new_head;
+}
