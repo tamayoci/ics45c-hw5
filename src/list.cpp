@@ -62,3 +62,26 @@ int compare(Node *left, Node *right) {
     }
     return 1;
 }
+
+int compare(Node *left, Node *right, int n) {
+    int count = 0;
+    while (left != nullptr && right != nullptr && count < n) {
+        if (left->data != right->data) {
+            return left->data - right->data;
+        }
+        left = left->next;
+        right = right->next;
+        ++count;
+    }
+    if (count == n) {
+        return 0;
+    }
+    if (left == nullptr && right == nullptr) {
+        return 0;
+    }
+    if (left == nullptr) {
+        return -1;
+    }
+    return 1;
+}
+
