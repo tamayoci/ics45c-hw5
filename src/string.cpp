@@ -29,3 +29,12 @@ String &String::operator=(const String &s) {
     }
     return *this;
 }
+
+String &String::operator=(String &&s) {
+    if (this != &s) {
+        list::free(head);
+        head = s.head;
+        s.head = nullptr;
+    }
+    return *this;
+}
