@@ -45,3 +45,20 @@ Node *copy(Node *head) {
     }
     return new_head;
 }
+
+int compare(Node *left, Node *right) {
+    while (left != nullptr && right != nullptr) {
+        if (left->data != right->data) {
+            return left->data - right->data;
+        }
+        left = left->next;
+        right = right->next;
+    }
+    if (left == nullptr && right == nullptr) {
+        return 0;
+    }
+    if (left == nullptr) {
+        return -1;
+    }
+    return 1;
+}
