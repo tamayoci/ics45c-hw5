@@ -105,3 +105,13 @@ Node *append(Node *left, Node *right) {
     tail->next = copy(right);
     return result;
 }
+
+Node *find_char(Node *head, char c) {
+    for (Node *p = head; p != nullptr; p = p->next) {
+        if (p->data == c) {
+            return p;
+        }
+    }
+    return nullptr;
+}
+
