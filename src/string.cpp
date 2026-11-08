@@ -107,3 +107,10 @@ String &String::operator+=(const String &s) {
     return *this;
 }
 
+String::~String() {
+    list::free(head);
+}
+
+String::String(list::Node *head) {
+    this->head = head;
+}
