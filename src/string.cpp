@@ -82,3 +82,15 @@ bool String::operator==(const String &s) const {
     return list::compare(head, s.head) == 0;
 }
 
+std::strong_ordering String::operator<=>(const String &s) const {
+    int result = list::compare(head, s.head);
+    if (result < 0) {
+        return std::strong_ordering::less;
+    }
+    if (result > 0) {
+        return std::strong_ordering::greater;
+    }
+    return std::strong_ordering::equal;
+}
+
+
