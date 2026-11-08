@@ -22,3 +22,10 @@ void String::swap(String &s) {
     std::swap(head, s.head);
 }
 
+String &String::operator=(const String &s) {
+    if (this != &s) {
+        String temp(s);
+        swap(temp);
+    }
+    return *this;
+}
