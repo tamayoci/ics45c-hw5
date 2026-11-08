@@ -92,3 +92,16 @@ Node *reverse(Node *head) {
     }
     return result;
 }
+
+Node *append(Node *left, Node *right) {
+    if (left == nullptr) {
+        return copy(right);
+    }
+    Node *result = copy(left);
+    Node *tail = result;
+    while (tail->next != nullptr) {
+        tail = tail->next;
+    }
+    tail->next = copy(right);
+    return result;
+}
