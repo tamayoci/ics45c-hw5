@@ -132,3 +132,13 @@ Node *find_list(Node *haystack, Node *needle) {
     }
     return nullptr;
 }
+
+Node *last(Node *head) {
+    if (head == nullptr) {
+        return nullptr;
+    }
+    while (head->next != nullptr) {
+        head = head->next;
+    }
+    return head;
+}
