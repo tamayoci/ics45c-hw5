@@ -142,3 +142,17 @@ Node *last(Node *head) {
     }
     return head;
 }
+
+Node *nth(Node *head, int n) {
+    int index = 0;
+
+    for (Node *p = head; p != nullptr; p = p->next) {
+        if (index == n) {
+            return p;
+        }
+
+        ++index;
+    }
+
+    return nullptr;
+}
