@@ -33,6 +33,12 @@ void free(Node *head) {
     }
 }
 
+void print(std::ostream &out, Node *head) {
+    for (Node *p = head; p != nullptr; p = p->next) {
+        out << p->data;
+    }
+}
+
 Node *copy(Node *head) {
     if (head == nullptr) {
         return nullptr;
@@ -166,4 +172,7 @@ int index(Node *head, Node *node) {
         ++i;
     }
     return -1;
+}
+
+
 }
