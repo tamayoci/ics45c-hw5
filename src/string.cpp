@@ -58,3 +58,11 @@ int String::size() const {
 String String::reverse() const {
     return String(list::reverse(head));
 }
+
+int String::indexOf(char c) const {
+    list::Node *found = list::find_char(head, c);
+    if (found == nullptr) {
+        return -1;
+    }
+    return list::index(head, found);
+}
