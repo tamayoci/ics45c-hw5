@@ -17,3 +17,8 @@ String::String(String &&s) {
     head = s.head;
     s.head = nullptr;
 }
+
+void String::swap(String &s) {
+    std::swap(head, s.head);
+}
+
