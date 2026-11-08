@@ -107,10 +107,19 @@ String &String::operator+=(const String &s) {
     return *this;
 }
 
+void String::print(std::ostream &out) const {
+    list::print(out, head);
+}
+
 String::~String() {
     list::free(head);
 }
 
 String::String(list::Node *head) {
     this->head = head;
+}
+
+std::ostream &operator<<(std::ostream &out, const String &s) {
+    s.print(out);
+    return out;
 }
