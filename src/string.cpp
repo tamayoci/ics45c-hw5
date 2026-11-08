@@ -111,6 +111,13 @@ void String::print(std::ostream &out) const {
     list::print(out, head);
 }
 
+void String::read(std::istream &in) {
+    char buffer[1024];
+    in >> buffer;
+    list::free(head);
+    head = list::from_string(buffer);
+}
+
 String::~String() {
     list::free(head);
 }
@@ -122,4 +129,9 @@ String::String(list::Node *head) {
 std::ostream &operator<<(std::ostream &out, const String &s) {
     s.print(out);
     return out;
+}
+
+std::istream &operator>>(std::istream &in, String &s) {
+    s.read(in);
+    return in;
 }
