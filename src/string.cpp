@@ -54,3 +54,7 @@ char String::operator[](int index) const {
 int String::size() const {
     return list::length(head);
 }
+
+String String::reverse() const {
+    return String(list::reverse(head));
+}
