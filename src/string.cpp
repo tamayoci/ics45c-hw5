@@ -78,3 +78,7 @@ int String::indexOf(const String &s) const {
     return list::index(head, found);
 }
 
+bool String::operator==(const String &s) const {
+    return list::compare(head, s.head) == 0;
+}
+
