@@ -24,3 +24,11 @@ Node *from_string(const char *s) {
     }
     return head;
 }
+
+void free(Node *head) {
+    while (head != nullptr) {
+        Node *temp = head;
+        head = head->next;
+        delete temp;
+    }
+}
