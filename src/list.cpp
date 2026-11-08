@@ -156,3 +156,14 @@ Node *nth(Node *head, int n) {
 
     return nullptr;
 }
+
+int index(Node *head, Node *node) {
+    int i = 0;
+    for (Node *p = head; p != nullptr; p = p->next) {
+        if (p == node) {
+            return i;
+        }
+        ++i;
+    }
+    return -1;
+}
