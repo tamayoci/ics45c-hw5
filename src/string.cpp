@@ -12,3 +12,8 @@ String::String(const char *s) {
 String::String(const String &s) {
     head = list::copy(s.head);
 }
+
+String::String(String &&s) {
+    head = s.head;
+    s.head = nullptr;
+}
