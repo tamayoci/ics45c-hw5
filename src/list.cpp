@@ -85,3 +85,10 @@ int compare(Node *left, Node *right, int n) {
     return 1;
 }
 
+Node *reverse(Node *head) {
+    Node *result = nullptr;
+    for (Node *p = head; p != nullptr; p = p->next) {
+        result = new Node{p->data, result};
+    }
+    return result;
+}
